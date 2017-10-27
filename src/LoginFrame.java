@@ -33,12 +33,14 @@ public class LoginFrame extends JFrame{
         btlogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(jtid.getText().equals("h304")&& new String(jtpw.getPassword()).equals("333")){
-                    MainFrame mFrm=new MainFrame();
+                if(jtid.getText().equals("h304")&& new String(jtpw.getPassword()).equals("23323456")){
+                    MainFrame mFrm=new MainFrame(LoginFrame.this);
                     mFrm.setVisible(true);
                     LoginFrame.this.setVisible(false);
+                    jtid.setText("");
+                    jtpw.setText("");
             }else{
-                    JOptionPane.showMessageDialog(null, "Error");
+                    JOptionPane.showMessageDialog(null, "Wrong ID or Password");
                 }
             }
         });
